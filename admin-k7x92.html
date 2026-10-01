@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, interactive-widget=resizes-content">
+<meta name="robots" content="noindex,nofollow">
+<meta name="color-scheme" content="light dark">
+<title>ایڈمن — المنہج الصحیح</title>
+<style>
+@font-face{font-family:'JameelNoori';src:url('JameelNoori.woff2') format('woff2');font-display:swap}
+:root{--bg:#F6F1E7;--card:#fff;--ink:#22201C;--soft:#6F6656;--accent:#8A2F2F;--em:#12463A;--gold:#B8912F;--border:#E6DCC6;--jn:'JameelNoori','Noto Nastaliq Urdu','Segoe UI',Tahoma,sans-serif}
+@media(prefers-color-scheme:dark){:root{--bg:#13100C;--card:#1E1913;--ink:#EEE6D5;--soft:#B5A98F;--accent:#E08F8E;--border:#372F23;--gold:#D3B24E}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--jn);min-height:100vh}
+[hidden]{display:none!important}
+.top{background:var(--em);color:#F7EBC8;padding:12px 16px;display:flex;align-items:center;justify-content:space-between}
+.top h1{margin:0;font-weight:400;font-size:1.3rem;line-height:2}
+.wrap{max-width:720px;margin:0 auto;padding:16px 16px 100px}
+.box{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px 16px;margin-bottom:16px}
+label{display:block;color:var(--soft);margin:12px 0 4px}
+input[type=text],input[type=password],input[type=search],textarea,select{width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:8px;background:var(--bg);color:var(--ink);font-family:var(--jn);font-size:1.05rem;text-align:right}
+textarea{min-height:170px;line-height:2.2}
+#f-link{direction:ltr;text-align:left}
+.btn{padding:6px 16px;border-radius:10px;border:none;cursor:pointer;font-family:var(--jn);font-size:1.05rem;line-height:2}
+.pri{background:var(--em);color:#F7EBC8}.dng{background:var(--accent);color:#fff}
+.ghost{background:transparent;color:var(--soft);border:1px solid var(--border)}
+.btn[disabled]{opacity:.55}
+.actions{display:flex;gap:10px;margin-top:16px}.actions .btn{flex:1}
+.st{color:var(--soft);margin-top:10px;min-height:1.6em;line-height:2}
+.item{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px 14px;margin-bottom:10px}
+.item h3{margin:0 0 4px;font-weight:400;color:var(--accent);font-size:1.15rem;line-height:2}
+.item small{color:var(--soft)}
+.row{display:flex;gap:8px;margin-top:8px}
+.row button{background:none;border:1px solid var(--em);color:var(--em);border-radius:8px;padding:0 16px;line-height:2.1;font-family:var(--jn);cursor:pointer}
+.row .del{border-color:var(--accent);color:var(--accent)}
+@media(prefers-color-scheme:dark){.row button:not(.del){color:var(--gold);border-color:var(--gold)}}
+#fab{position:fixed;left:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));width:58px;height:58px;border-radius:50%;border:none;background:var(--accent);color:#fff;font-size:2rem;box-shadow:0 6px 20px rgba(0,0,0,.3);cursor:pointer}
+.ov{display:none}.ov.show{display:block}
+.ov-in{max-width:720px;margin:0 auto;padding:14px 16px 80px}
+.close{float:left;width:40px;height:40px;border-radius:50%;border:1px solid var(--border);background:var(--card);color:var(--soft);font-size:1.4rem;cursor:pointer}
+.ttl{text-align:center;color:var(--accent);font-weight:400;font-size:1.7rem;line-height:2;margin:18px 0 12px}
+/* chat */
+#msgs{display:flex;flex-direction:column;gap:10px;margin-bottom:12px}
+.msg{max-width:88%;padding:4px 14px;border-radius:16px;line-height:2.2;white-space:pre-wrap;overflow-wrap:anywhere}
+.msg.u{align-self:flex-start;background:var(--em);color:#F7EBC8}
+.msg.a{align-self:flex-end;background:var(--card);border:1px solid var(--border)}
+.ths{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+.th{position:relative;width:64px;height:64px;border-radius:10px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font:700 .85rem Arial;color:var(--accent);background:var(--bg);cursor:pointer}
+.th img{width:100%;height:100%;object-fit:cover;border-radius:9px}
+.th button{position:absolute;top:-8px;left:-8px;width:22px;height:22px;padding:0;border-radius:50%;border:2px solid var(--card);background:var(--accent);color:#fff;font:700 14px/1 Arial;cursor:pointer}
+.cbox{position:relative;background:var(--card);border:1.5px solid var(--gold);border-radius:22px;padding:10px 12px 8px;box-shadow:0 6px 22px rgba(0,0,0,.08)}
+.cbox textarea{border:none;background:transparent;min-height:56px;max-height:170px;padding:6px 4px;resize:none;outline:none}
+.cbar{direction:ltr;display:flex;align-items:center;gap:8px;margin-top:4px}
+.cbar .sp{flex:1}
+.pbtn{height:38px;min-width:38px;padding:0 12px;border-radius:19px;border:1px solid var(--border);background:var(--bg);color:var(--ink);font:600 .85rem Arial,sans-serif;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px}
+#plus{font-size:1.5rem;width:38px;padding:0}
+#send{width:38px;padding:0;background:var(--em);color:#F7EBC8;border:none;font-size:1.2rem}
+.pop{position:absolute;bottom:56px;left:10px;direction:rtl;background:var(--card);border:1px solid var(--border);border-radius:14px;box-shadow:0 8px 28px rgba(0,0,0,.25);padding:6px;min-width:170px;z-index:5;display:none}
+.pop.show{display:block}
+.pop button{display:block;width:100%;text-align:right;background:none;border:none;padding:6px 12px;border-radius:9px;color:var(--ink);font-family:var(--jn);font-size:1.05rem;line-height:2;cursor:pointer}
+.pop button.sel{background:var(--bg);color:var(--accent)}
+#mpop{left:56px;direction:ltr}#mpop button{text-align:left;font:600 .9rem Arial,sans-serif;padding:9px 12px}
+#lb{position:fixed;inset:0;z-index:99;background:rgba(0,0,0,.88);display:none;align-items:center;justify-content:center}
+#lb img{max-width:96vw;max-height:92vh}
+#toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);background:#222;color:#fff;padding:2px 18px;border-radius:20px;z-index:100;display:none;max-width:90vw;text-align:center;line-height:2.2}
+</style>
+</head>
+<body>
+
+<div class="top"><h1>ایڈمن پینل</h1><button class="btn ghost" id="close-btn" hidden style="color:#F7EBC8;border-color:#E8D9A8">بند کریں</button></div>
+
+<div class="wrap" id="login-box">
+  <div class="box">
+    <label style="margin-top:0">پاسورڈ</label>
+    <input id="pw" type="password" placeholder="پاسورڈ درج کریں" autocomplete="current-password">
+    <label style="display:flex;gap:8px;align-items:center"><input type="checkbox" id="remember"> اس فون پر یاد رکھیں</label>
+    <div class="actions"><button class="btn pri" id="login-btn">داخل ہوں</button></div>
+    <div class="st" id="login-st"></div>
+  </div>
+</div>
+
+<div class="wrap" id="list-box" hidden>
+  <input id="q" type="search" placeholder="تلاش کریں..." inputmode="text">
+  <div class="st" id="count"></div>
+  <div id="list"></div>
+</div>
+<button id="fab" hidden title="نیا مضمون">+</button>
+
+<div class="ov" id="ed"><div class="ov-in">
+  <h2 class="ttl" id="ed-title">نیا مضمون جوڑے</h2>
+  <div id="msgs"></div>
+
+  <div class="cbox">
+    <div class="ths" id="tray"></div>
+    <textarea id="ta" rows="2" lang="ur" inputmode="text" enterkeyhint="enter" placeholder="یہاں لکھیں، یا تصویر / PDF لگائیں..."></textarea>
+    <div class="cbar">
+      <button class="pbtn" id="plus" type="button" aria-label="لگائیں">+</button>
+      <button class="pbtn" id="mbtn" type="button"><span id="mname"></span><span>▾</span></button>
+      <span class="sp"></span>
+      <button class="pbtn" id="send" type="button" aria-label="بھیجیں">➤</button>
+    </div>
+    <div class="pop" id="apop">
+      <button data-p="cam">📷 کیمرہ</button>
+      <button data-p="photo">🖼️ تصویر (گیلری)</button>
+      <button data-p="file">📄 فائل (PDF)</button>
+    </div>
+    <div class="pop" id="mpop"></div>
+  </div>
+  <input type="file" id="cam" accept="image/*" capture="environment" hidden>
+  <input type="file" id="photo" accept="image/*" multiple hidden>
+  <input type="file" id="file" accept="application/pdf,image/*" multiple hidden>
+
+  <div class="box" style="margin-top:16px">
+    <label style="margin-top:0">عنوان</label><input id="f-unwan" type="text" lang="ur" inputmode="text">
+    <label>مضمون</label><textarea id="f-mazmoon" lang="ur" inputmode="text" placeholder="اردو، عربی عبارت، ترجمہ اور حوالہ (عربی الگ لائن پر)"></textarea>
+    <label>کتاب کا نام</label><input id="f-kitab" type="text" lang="ur" inputmode="text">
+    <label>صفحہ نمبر</label><input id="f-safa" type="text" lang="ur" inputmode="text">
+    <label>مصنف</label><input id="f-musannif" type="text" lang="ur" inputmode="text">
+    <label>کتاب کا لنک</label><input id="f-link" type="text" lang="en" inputmode="text" autocapitalize="off" placeholder="https://...">
+    <div class="actions">
+      <button class="btn pri" id="save-btn">محفوظ کریں</button>
+      <button class="btn dng" id="del-btn">حذف</button>
+    </div>
+    <div class="st" id="status"></div>
+  </div>
+</div></div>
+<div id="lb"><img id="lbi" alt=""></div>
+<div id="toast"></div>
+
+<script>
+var APPS_SCRIPT_URL="https://script.google.com/macros/s/AKfycbwrtA58jf3TMWoCU3LJsGr5pv6TzkleboLPsaAmCoPnNcNv4iBlY5z1W85gy77x37SA/exec";
+var LS_KEY='mn_admin_tk', FIELDS=['unwan','mazmoon','kitab','safa','musannif','link'];
+var MODELS=[['gemini-3.8-flash','Gemini 3.8 Flash'],['gemini-3.7-flash','Gemini 3.7 Flash'],['gemini-3-flash-preview','Gemini 3 Flash (Preview)']];
+var $=function(i){return document.getElementById(i);};
+var token=null,entries=[],editingId=null,dirty=false,files=[],urls=[],busy=false,model=MODELS[0][0],toastT;
+var MAX=6,PDF_MAX=10*1024*1024,PDF_TOTAL=12*1024*1024;
+var MSG={AI_BUSY:'گوگل کا AI مصروف ہے۔ ایک دو منٹ بعد کوشش کریں۔',AI_LIMIT:'مفت حد پوری ہو گئی — ایک منٹ بعد یا کل کوشش کریں۔',AI_TIMEOUT:'AI کو بہت وقت لگ گیا۔ کم صفحے یا آسان ہدایت سے کوشش کریں۔',NEED_LOGIN:'لاگ اِن ختم ہو گیا، دوبارہ لاگ اِن کریں۔'};
+
+function toast(m){var t=$('toast');t.textContent=m;t.style.display='block';clearTimeout(toastT);toastT=setTimeout(function(){t.style.display='none';},4500);}
+function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function safeUrl(u){u=String(u||'').trim();return /^https?:\/\//i.test(u)?u:'';}
+function api(p){
+  return fetch(APPS_SCRIPT_URL,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(p)}).then(function(r){
+    return r.text().then(function(t){try{return JSON.parse(t);}catch(x){throw new Error('HTTP '+r.status+' — '+t.replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim().slice(0,200));}});
+  });
+}
+
+// ---- پہلے سے لوڈ: سرور جگائیں اور فہرست تیار رکھیں (لاگ اِن تیز) ----
+function load(){
+  if(!entries.length)$('count').textContent='لوڈ ہو رہا ہے...';
+  return fetch(APPS_SCRIPT_URL).then(function(r){return r.json();}).then(function(d){entries=d.entries||[];render();}).catch(function(){if(!entries.length)$('count').textContent='ڈیٹا لوڈ نہیں ہو سکا — انٹرنیٹ چیک کریں۔';});
+}
+load();
+
+// ---- Login: پینل فوراً کھلتا ہے، تصدیق پس منظر میں ----
+function enter(){$('login-box').hidden=true;$('list-box').hidden=false;$('fab').hidden=false;render();load();}
+function leave(msg){
+  token=null;try{localStorage.removeItem(LS_KEY);}catch(x){}
+  closeEd();$('msgs').innerHTML='';
+  $('list-box').hidden=true;$('fab').hidden=true;$('login-box').hidden=false;
+  $('login-btn').disabled=false;$('login-st').textContent=msg||'';
+}
+$('login-btn').onclick=function(){
+  var pw=$('pw').value;if(!pw)return;
+  var rem=$('remember').checked,b=this;b.disabled=true;$('login-st').textContent='';
+  enter();toast('تصدیق ہو رہی ہے...');
+  api({action:'login',password:pw,remember:rem}).then(function(r){
+    if(r&&r.success&&r.token){token=r.token;$('pw').value='';if(rem){try{localStorage.setItem(LS_KEY,r.token);}catch(x){}}toast('✓ لاگ اِن ہو گیا');return;}
+    var m='پاسورڈ غلط ہے۔';
+    if(r&&r.code==='LOCKED')m='بہت زیادہ غلط کوششیں — ۱۵ منٹ بعد کوشش کریں۔';
+    else if(r&&r.code==='BUSY')m='سرور مصروف ہے، تھوڑی دیر بعد کوشش کریں۔';
+    leave(m);
+  }).catch(function(){leave('کنکشن میں مسئلہ ہوا۔');});
+};
+$('pw').onkeydown=function(e){if(e.key==='Enter')$('login-btn').click();};
+try{var saved=localStorage.getItem(LS_KEY);if(saved){token=saved;enter();api({action:'auth',token:saved}).then(function(r){if(!(r&&r.success))leave(MSG.NEED_LOGIN);}).catch(function(){});}}catch(x){}
+
+// ---- List ----
+function render(){
+  var q=$('q').value.trim().toLowerCase();
+  var m=entries.filter(function(e){return !q||(e.unwan+' '+e.mazmoon+' '+e.kitab+' '+e.musannif).toLowerCase().indexOf(q)!==-1;});
+  $('count').textContent=entries.length?'کل: '+entries.length+(q?' | نتائج: '+m.length:''):'';
+  $('list').innerHTML=m.slice(0,60).map(function(e){
+    var id=esc(e.id);
+    return '<div class="item"><h3>'+esc(e.unwan)+'</h3><small>'+esc([e.kitab,e.safa].filter(Boolean).join(' — '))+'</small>'
+     +'<div class="row"><button data-a="edit" data-id="'+id+'">ترمیم</button><button class="del" data-a="del" data-id="'+id+'">حذف</button></div></div>';
+  }).join('')+(m.length>60?'<p class="st">پہلی ۶۰ انٹریاں دکھائی گئی ہیں — تلاش سے باقی ڈھونڈیں۔</p>':'');
+}
+$('q').oninput=render;
+$('list').onclick=function(ev){
+  var b=ev.target.closest&&ev.target.closest('[data-a]');if(!b)return;
+  var id=b.getAttribute('data-id');
+  if(b.getAttribute('data-a')==='edit'){var e=entries.filter(function(x){return x.id===id;})[0];if(e)openEd(e);}
+  else removeEntry(id,false);
+};
+function removeEntry(id,closeAfter){
+  if(!token){toast('لاگ اِن کی تصدیق جاری ہے، چند سیکنڈ رکیں۔');return;}
+  if(!confirm('کیا آپ واقعی یہ پوری انٹری حذف کرنا چاہتے ہیں؟'))return;
+  api({token:token,action:'delete',id:id}).then(function(r){
+    if(r.success){if(closeAfter)closeEd();toast('حذف ہو گیا۔');load();}
+    else if(r.code==='NOT_FOUND'){if(closeAfter)closeEd();toast('یہ انٹری پہلے ہی حذف ہو چکی ہے۔');load();}
+    else if(r.code==='NEED_LOGIN')toast(MSG.NEED_LOGIN);
+    else toast('حذف نہیں ہو سکا: '+(r.error||''));
+  }).catch(function(){toast('کنکشن میں مسئلہ ہوا۔');});
+}
+
+// ---- Editor ----
+function show(on){$('ed').classList.toggle('show',on);$('close-btn').hidden=!on;$('list-box').hidden=on;$('fab').hidden=on;if(on)window.scrollTo(0,0);}
+function fill(o){FIELDS.forEach(function(k){$('f-'+k).value=(o&&o[k])||'';});}
+function clearChat(){hist=[];files=[];urls.forEach(function(u){URL.revokeObjectURL(u);});urls=[];$('msgs').innerHTML='';$('ta').value='';$('ta').style.height='';tray();}
+function openEd(e,keep){
+  editingId=e?e.id:null;$('ed-title').textContent=e?'ترمیم':'نیا مضمون جوڑے';
+  $('del-btn').textContent=e?'حذف':'صاف کریں';
+  fill(e);$('status').textContent='';if(!keep)clearChat();dirty=false;closePops();show(true);
+}
+function closeEd(){show(false);clearChat();dirty=false;}
+FIELDS.forEach(function(k){$('f-'+k).addEventListener('input',function(){dirty=true;});});
+$('fab').onclick=function(){openEd(null);};
+$('close-btn').onclick=function(){if((dirty||files.length)&&!confirm('لکھی ہوئی تبدیلیاں ضائع ہو جائیں گی۔ کیا واقعی بند کریں؟'))return;closeEd();};
+$('del-btn').onclick=function(){
+  if(editingId){removeEntry(editingId,true);return;}
+  if(confirm('فارم صاف کر دیں؟')){fill(null);dirty=false;}
+};
+$('save-btn').onclick=function(){
+  if(!token){$('status').textContent='لاگ اِن کی تصدیق جاری ہے، چند سیکنڈ رکیں۔';return;}
+  var p={token:token,action:editingId?'edit':'add',id:editingId};
+  FIELDS.forEach(function(k){p[k]=$('f-'+k).value.trim();});
+  if(!p.unwan||!p.mazmoon){$('status').textContent='عنوان اور مضمون لکھنا ضروری ہے۔';return;}
+  if(p.link&&!safeUrl(p.link)){$('status').textContent='لنک http:// یا https:// سے شروع ہونا چاہیے۔';return;}
+  $('status').textContent='محفوظ ہو رہا ہے...';$('save-btn').disabled=true;
+  api(p).then(function(r){
+    $('save-btn').disabled=false;
+    if(r.success){closeEd();toast('محفوظ ہو گیا۔');load();}
+    else $('status').textContent=r.code==='NEED_LOGIN'?MSG.NEED_LOGIN:'محفوظ نہیں ہو سکا: '+(r.error||'');
+  }).catch(function(){$('save-btn').disabled=false;$('status').textContent='کنکشن میں مسئلہ ہوا۔';});
+};
+
+// ---- چیٹ باکس: + مینو اور ماڈل مینو ----
+try{var sm=localStorage.getItem('mn_scan_model');if(sm&&MODELS.some(function(m){return m[0]===sm;}))model=sm;}catch(x){}
+function mlabel(){return MODELS.filter(function(m){return m[0]===model;})[0][1];}
+function mRender(){
+  $('mname').textContent=mlabel();
+  $('mpop').innerHTML=MODELS.map(function(m){return '<button data-m="'+m[0]+'"'+(m[0]===model?' class="sel"':'')+'>'+m[1]+'</button>';}).join('');
+}
+mRender();
+function closePops(){$('apop').classList.remove('show');$('mpop').classList.remove('show');}
+$('plus').onclick=function(e){e.stopPropagation();var o=$('apop').classList.contains('show');closePops();if(!o)$('apop').classList.add('show');};
+$('mbtn').onclick=function(e){e.stopPropagation();var o=$('mpop').classList.contains('show');closePops();if(!o)$('mpop').classList.add('show');};
+$('apop').onclick=function(e){var b=e.target.closest('[data-p]');if(!b)return;closePops();$(b.getAttribute('data-p')).click();};
+$('mpop').onclick=function(e){var b=e.target.closest('[data-m]');if(!b)return;model=b.getAttribute('data-m');try{localStorage.setItem('mn_scan_model',model);}catch(x){}mRender();closePops();};
+document.addEventListener('click',function(e){if(!e.target.closest('.pop'))closePops();});
+['cam','photo','file'].forEach(function(id){$(id).onchange=function(){addFiles(this.files);this.value='';};});
+$('ta').oninput=function(){this.style.height='auto';this.style.height=Math.min(this.scrollHeight,170)+'px';};
+
+function isPdf(f){return /pdf/i.test(f.type)||/\.pdf$/i.test(f.name||'');}
+function addFiles(list){
+  var msg='',pdfB=files.reduce(function(a,it){return a+(it.pdf?it.file.size:0);},0);
+  Array.prototype.slice.call(list||[]).forEach(function(f){
+    var pdf=isPdf(f);
+    if(!pdf&&!/^image\//.test(f.type)){msg='صرف تصویر یا PDF شامل ہو سکتی ہے۔';return;}
+    if(files.length>=MAX){msg='زیادہ سے زیادہ ۶ فائلیں شامل ہو سکتی ہیں۔';return;}
+    if(pdf&&(f.size>PDF_MAX||pdfB+f.size>PDF_TOTAL)){msg='PDF بہت بڑی ہے (زیادہ سے زیادہ تقریباً ۱۰ MB)۔';return;}
+    if(pdf)pdfB+=f.size;
+    var u=URL.createObjectURL(f);urls.push(u);files.push({file:f,pdf:pdf,url:u});
+  });
+  tray();if(msg)toast(msg);
+}
+function thHTML(it,x,i){return '<span class="th" data-u="'+it.url+'" data-pdf="'+(it.pdf?1:0)+'">'+(it.pdf?'PDF':'<img src="'+it.url+'" alt="">')+(x?'<button data-x="'+i+'" aria-label="ہٹائیں">×</button>':'')+'</span>';}
+function tray(){$('tray').innerHTML=files.map(function(it,i){return thHTML(it,true,i);}).join('');}
+document.addEventListener('click',function(e){
+  var x=e.target.closest&&e.target.closest('[data-x]');
+  if(x){e.stopPropagation();files.splice(+x.getAttribute('data-x'),1);tray();return;}
+  var t=e.target.closest&&e.target.closest('.th');
+  if(t){var u=t.getAttribute('data-u');if(t.getAttribute('data-pdf')==='1')window.open(u,'_blank');else{$('lbi').src=u;$('lb').style.display='flex';}}
+});
+$('lb').onclick=function(){this.style.display='none';};
+
+function bubble(cls,html){var d=document.createElement('div');d.className='msg '+cls;d.innerHTML=html;$('msgs').appendChild(d);d.scrollIntoView({block:'nearest'});return d;}
+function toJpeg(file){
+  return new Promise(function(res,rej){
+    var img=new Image(),url=URL.createObjectURL(file);
+    img.onload=function(){
+      var w=img.naturalWidth,h=img.naturalHeight,s=Math.min(1,1800/Math.max(w,h)),c=document.createElement('canvas');
+      c.width=Math.round(w*s);c.height=Math.round(h*s);c.getContext('2d').drawImage(img,0,0,c.width,c.height);
+      var d=c.toDataURL('image/jpeg',0.85);URL.revokeObjectURL(url);res({mime:'image/jpeg',data:d.split(',')[1]});
+    };
+    img.onerror=function(){rej(new Error('image'));};img.src=url;
+  });
+}
+function readPdf(file){return new Promise(function(res,rej){var fr=new FileReader();fr.onload=function(){res({mime:'application/pdf',data:String(fr.result).split(',')[1]});};fr.onerror=function(){rej(new Error('pdf'));};fr.readAsDataURL(file);});}
+function ctx(t){
+  var cur={};FIELDS.forEach(function(k){var v=$('f-'+k).value.trim();if(v)cur[k]=v;});
+  return (Object.keys(cur).length?'موجودہ فارم (ضرورت کے مطابق اسی میں تبدیلی کرو): '+JSON.stringify(cur)+'\n':'')+'ہدایت: '+(t||'تصویر سے فارم بھرو');
+}
+var hist=[];
+function formObj(){var o={};FIELDS.forEach(function(k){o[k]=$('f-'+k).value.trim();});return o;}
+function applyCmd(r){
+  var c=r.command,id=r.id||editingId;
+  if(c==='clear'){fill(null);dirty=false;}
+  else if(c==='save')$('save-btn').click();
+  else if(c==='delete'&&id)removeEntry(id,id===editingId);
+  else if(c==='open'&&r.id){var e=entries.filter(function(x){return x.id===r.id;})[0];if(e)openEd(e,true);}
+}
+$('send').onclick=function(){
+  if(busy)return;
+  var txt=$('ta').value.trim(),fl=files.slice();
+  if(!txt&&!fl.length)return;
+  if(!token){toast('لاگ اِن کی تصدیق جاری ہے، چند سیکنڈ رکیں۔');return;}
+  busy=true;
+  bubble('u',(fl.length?'<div class="ths">'+fl.map(function(it){return thHTML(it,false);}).join('')+'</div>':'')+esc(txt));
+  files=[];tray();$('ta').value='';$('ta').style.height='';
+  var w=bubble('a','⏳ سوچ رہا ہوں... (آدھا منٹ لگ سکتا ہے)');
+  Promise.all(fl.map(function(it){return it.pdf?readPdf(it.file):toJpeg(it.file);})).then(function(im){
+    return api({token:token,action:'chat',message:txt,history:hist.slice(-8),images:im,model:model,form:formObj(),editingId:editingId||'',entries:entries.map(function(e){return {id:e.id,unwan:e.unwan};})});
+  }).then(function(r){
+    busy=false;
+    if(r&&r.success){
+      hist.push({role:'user',text:txt},{role:'model',text:r.reply});
+      var ch=false;FIELDS.forEach(function(k){if(r.form&&r.form[k]!==undefined){$('f-'+k).value=r.form[k];ch=true;}});
+      if(ch)dirty=true;
+      w.textContent=(r.reply||'ٹھیک ہے۔')+(ch?'\n\n✓ فارم میں بھر دیا — نیچے دیکھ کر ٹھیک کریں۔':'')+(r.note==='SEARCH_OFF'?'\n(گوگل سرچ دستیاب نہ ہو سکی۔)':'');
+      applyCmd(r);
+    }else w.textContent=MSG[r&&r.code]||('نہیں ہو سکا: '+((r&&r.error)||'نامعلوم مسئلہ')+((r&&r.detail)?'\n'+r.detail:''));
+  }).catch(function(err){busy=false;w.textContent='مسئلہ ہوا، دوبارہ کوشش کریں۔ '+String((err&&err.message)||'');});
+};
+</script>
+</body>
+</html>
